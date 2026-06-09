@@ -467,31 +467,42 @@ ORDER BY brand, year_month ASC;
 
 ## Findings and Conclusions
 
-### 1. Brand Performance Overview
-All three brands — Nykaa, Purplle, and Tira — operate at comparable efficiency levels with average CTR of ~8.5% and CVR of ~22% across 1,66,665 campaigns over 11 months. However, significant strategic differences emerge when performance is broken down by channel, segment, and campaign type.
+### Brand vs Brand — Quick Snapshot
 
-### 2. Brand Consistency — Tira Leads Surprisingly
-Tira, despite being the newest brand (launched 2023), emerges as the most operationally consistent performer with the lowest revenue standard deviation of ₹6.47 Cr and a revenue gap of just ₹17.5 Cr between its best and worst months. Nykaa generates the highest average monthly revenue at ₹252 Cr but shows the greatest volatility — standard deviation of ₹9.49 Cr — reflecting an aggressive campaign-driven strategy. Purplle recorded the single largest month-over-month decline of -9.74% in February 2025, indicating higher seasonal dependency. Tira and Purplle both achieved an 80% monthly recovery rate vs Nykaa's 67% — confirming Tira as the most resilient brand.
+| Metric | Nykaa | Purplle | Tira |
+|---|---|---|---|
+| Avg Monthly Revenue | ₹252 Cr 🥇 | ₹251 Cr | ₹250 Cr |
+| Revenue Consistency | Most Volatile ❌ | Moderate ⚠️ | Most Consistent ✅ |
+| Monthly Recovery Rate | 67% | 80% ✅ | 80% ✅ |
+| Best Channel | Email (ROAS 1389) | Email (ROAS 1382) | Instagram (ROAS 1397) |
+| Best Campaign Type | Social Media | Paid Ads | Paid Ads |
+| Best Customer Segment | Working Women | College Students | Youth |
+| Best Language | English | English | Tamil 🌟 |
+| Best Quarter (ROAS) | Q1 FY Jul-Sep | Q3 FY Jan-Mar | Q3 FY Jan-Mar |
 
-### 3. Channel Strategy — No Universal Winner
-Email consistently delivers the highest ROAS for Nykaa (1389) and Purplle (1382), reflecting strong retention marketing through engaged subscriber bases. Instagram leads for Tira (1397) — aligning with its visual-first brand identity and younger audience. Google ranks last in conversions across all three brands, confirming that beauty is a visual discovery category where intent-based search ads underperform. WhatsApp remains an underutilised mid-tier channel that consistently outperforms Google despite lower investment — a significant untapped opportunity for all three brands in the Indian market.
+---
 
-### 4. Campaign Type Performance
-Paid Ads delivers the highest ROAS for Purplle (1397) and Tira (1418) while Social Media leads for Nykaa (1386). The CTR-CVR-ROAS conflict matrix reveals a striking finding — Paid Ads is classified as a Star for Tira, Converter for Purplle, and Awareness for Nykaa — the same campaign type performing entirely differently across brands. This confirms that channel effectiveness depends on brand execution quality, not the channel itself. Influencer campaigns show the highest variance — performing as Star for Nykaa but Underperformer for Tira — highlighting the critical importance of brand-influencer fit.
+### Key Findings at a Glance
 
-### 5. Customer Segment Insights
-Youth emerges as the highest-value segment for Tira — the combination of Youth + Instagram delivers the highest ROAS of 1461 in the entire dataset. Working Women are Nykaa's most valuable segment (ROAS 1383), while College Students drive Purplle's strongest returns (ROAS 1391). Across all three brands, Premium Shoppers consistently underperform in ROAS despite higher spending — indicating disproportionately high acquisition costs that are not justified by revenue returns.
+**🏆 Biggest Winner**
+Tira's Youth + Instagram combination delivers ROAS of **1461** — the highest in the entire dataset across all 1,66,665 campaigns.
 
-### 6. Language and Regional Performance
-Tamil is Tira's strongest language with ROAS of 1391 — the highest in the entire language analysis — suggesting strong regional traction in South India, potentially driven by Tata's brand trust in that market. English leads for Nykaa and Purplle but ranks last for Tira, confirming that language effectiveness is entirely brand-specific. Hindi consistently performs mid-tier across all brands — reflecting high competition in India's largest language market.
+**📉 Biggest Surprise**
+Google ranks **last in conversions for all 3 brands** — confirming beauty is a visual discovery category where search ads consistently underperform.
 
-### 7. Time and Seasonal Trends
-February is a universal structural dip month across all three brands — driven by the shorter 28-day month rather than campaign failure. March consistently delivers the strongest recovery — Nykaa at +10.18% and Purplle at +9.38%. Q2 FY (Oct-Dec) drives the highest absolute revenue across all brands, consistent with India's festive season spending behaviour. Q3 FY (Jan-Mar) delivers the highest ROAS for Purplle and Tira — a post-festive efficiency window where reduced competitive pressure lowers acquisition costs while purchase intent remains strong.
+**⚠️ Counter-intuitive Finding**
+Premium Shoppers — the most pursued customer segment — deliver the **weakest ROAS across all 3 brands**, indicating high acquisition costs that revenue cannot justify.
 
-### 8. Top Campaign Characteristics
-The top 5 revenue-generating campaigns share common traits — CTR of 14-15% and CVR of 40-46%, nearly double the dataset averages. YouTube appears in 4 of 5 top campaigns despite ranking last in total conversions, revealing a high-ticket conversion pattern where YouTube drives fewer but significantly higher-value purchases. Two of the top 5 campaigns ran in October 2024 — confirming festive timing as a revenue amplifier.
+**📅 Universal Seasonal Pattern**
+February is a structural dip month for every brand (28-day effect). March is the universal recovery month — Nykaa bounces back +10.18%, Purplle +9.38%.
 
-> **Dataset Transparency Note:** This dataset is synthetically generated. Patterns such as identical CPL/CPC across brands and absence of festive season spikes reflect this. All anomalies were identified, flagged, and explained throughout the analysis — demonstrating real-world data validation and sanity-checking practices.
+**🎯 Same Campaign, Different Results**
+Paid Ads is a Star ⭐ for Tira, a Converter 💰 for Purplle, and an Awareness 📢 campaign for Nykaa — proving that channel effectiveness depends on brand execution, not the channel itself.
+
+**📺 YouTube Paradox**
+YouTube ranks last in total conversions but appears in 4 of 5 top revenue campaigns — revealing a high-ticket conversion pattern where fewer people buy but spend significantly more per transaction.
+
+> **Dataset Note:** This dataset is synthetically generated. Anomalies like identical CPL/CPC across brands were identified, flagged, and explained throughout — demonstrating real-world data validation practices.
 
 ---
 
@@ -522,16 +533,27 @@ The top 5 revenue-generating campaigns share common traits — CTR of 14-15% and
 
 ## Conclusion
 
-When I started this project, I expected the usual story — Nykaa dominates, bigger brand wins, Google Ads rule everything. The data had other plans.
+This project is an end-to-end SQL analysis of 1,66,665 marketing 
+campaigns across three leading Indian beauty brands — Nykaa, Purplle, 
+and Tira — built to answer real business questions.
+    Using advanced PostgreSQL techniques including CTEs, Window Functions, 
+UNNEST, RANK, STDDEV, and a CTR-CVR-ROAS Performance Matrix, I analyzed 
+key KPIs — CTR, CVR, ROAS, CPC, and CPL — across channels, segments, 
+languages, campaign types, and time periods.
 
-Tira, the youngest of the three brands, turned out to be the most consistent and resilient. Google, the world's biggest ad platform, ranked dead last for all three brands. Premium Shoppers — the segment every marketer chases — delivered the weakest returns. And the Youth + Instagram combination for Tira quietly delivered the highest ROAS in the entire dataset.
+Key findings:
+- Tira is the most consistent and resilient brand despite being the newest
+- Instagram and Email outperform Google across all 3 brands
+- Youth + Instagram delivers the highest ROAS (1461) in the entire dataset  
+- Marketing success depends on execution quality, not channel selection alone
 
-That's what makes data analysis exciting — not confirming what you already think, but discovering what you didn't expect.
+Beyond querying, this project demonstrates the ability to translate business 
+questions into analytical solutions, identify trends and anomalies, and 
+communicate data-driven recommendations — skills that matter in any 
+data analyst role.
 
-This project covers 1,66,665 campaigns across 11 months and answers 10 real business questions using PostgreSQL — from basic GROUP BY aggregations all the way to window functions, CTEs, UNNEST for multi-channel parsing, and a CROSS JOIN conflict matrix. Every query was written with a business question in mind, not just to show SQL skills.
-
-The Power BI dashboard is coming next — because insights locked in a SQL query aren't useful until a decision-maker can actually see and interact with them.
-
+The Power BI dashboard is coming next — because great insights deserve 
+great visuals. 🚀
 If you're a recruiter, hiring manager, or fellow data enthusiast — I'd love to connect and hear your thoughts! 🚀
 
 
