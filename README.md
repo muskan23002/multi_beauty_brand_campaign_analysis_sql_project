@@ -9,7 +9,7 @@ This project involves a comprehensive analysis of marketing campaign performance
 The following README provides a detailed account of the project's objectives, business problems, SQL queries, findings, and conclusions.
 
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
 ![Domain](https://img.shields.io/badge/Domain-Marketing%20Analytics-pink)
 
 ---
